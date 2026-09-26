@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prof. Isuru Bandara | Mathematics Educator Portfolio</title>
+  <meta name="description" content="Official academic portfolio, course syllabi, office hours, and contact for Prof. Isuru Bandara, Mathematics Department.">
+  <style>
+    /* Clean, Modern, Self-Contained Stylesheet for Mathematics Educator */
+    :root {
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --surface-subtle: #f5f5f4;
+      --border: #e7e5e4;
+      --text: #1c1917;
+      --text-muted: #57534e;
+      --text-light: #78716c;
+      --accent: #0f2d4a;
+      --accent-hover: #164268;
+      --accent-soft: #f0f4f8;
+      --success: #15803d;
+      --font-serif: "Source Serif 4", Georgia, Cambria, serif;
+      --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Top Bar */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 250, 249, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.25rem;
+    }
+
+    .brand {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: var(--accent);
+      border-radius: 0.375rem;
+      text-decoration: none;
+      transition: background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .header-cta:hover {
+      background-color: var(--accent-hover);
+    }
+
+    /* Page Navigation Tabs */
+    .tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      background: var(--surface-subtle);
+      padding: 0.25rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      width: fit-content;
+      margin: 1.5rem auto 0;
+    }
+
+    .tab-btn {
+      padding: 0.4rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-weight: 600;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: 2.75rem;
+      line-height: 1.15;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-lead {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 48ch;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-light);
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .meta-sep {
+      color: var(--border);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      background: var(--surface-subtle);
+    }
+
+    .hero-caption {
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.015em;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      max-width: 60ch;
+    }
+
+    /* Bio Layout */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .bio-prose {
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+    }
+
+    .bio-prose p {
+      margin-bottom: 1.25rem;
+    }
+
+    .quote-box {
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      font-style: italic;
+      color: var(--text);
+    }
+
+    .bio-sidebar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.75rem;
+    }
+
+    .sidebar-block {
+      margin-bottom: 1.75rem;
+    }
+
+    .sidebar-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .sidebar-heading {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.35rem;
+    }
+
+    .item-list {
+      list-style: none;
+    }
+
+    .item-list li {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.625rem;
+      line-height: 1.45;
+    }
+
+    .item-list strong {
+      color: var(--text);
+      display: block;
+    }
+
+    /* Classes Cards Grid */
+    .classes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .class-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .class-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .class-header {
+      margin-bottom: 1rem;
+    }
+
+    .class-meta {
+      font-size: 0.8125rem;
+      color: var(--text-light);
+      margin-bottom: 0.35rem;
+    }
+
+    .class-title {
+      font-family: var(--font-serif);
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .class-desc {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .syllabus-preview {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      padding: 0.875rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.8125rem;
+    }
+
+    .syllabus-preview-title {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .syllabus-preview ul {
+      padding-left: 1.25rem;
+      color: var(--text-muted);
+    }
+
+    .class-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8125rem;
+      color: var(--text-light);
+    }
+
+    /* Schedule Table */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      font-size: 0.875rem;
+    }
+
+    .schedule-table th {
+      background: var(--surface-subtle);
+      text-align: left;
+      padding: 0.875rem 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .schedule-table td {
+      padding: 0.875rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .schedule-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 2rem;
+    }
+
+    .contact-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-value {
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+    }
+
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      padding: 0.625rem 0.875rem;
+      font-size: 0.9375rem;
+      font-family: inherit;
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(15, 45, 74, 0.1);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      align-self: flex-start;
+      padding: 0.75rem 1.75rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: var(--accent);
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .success-alert {
+      display: none;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--text-light);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 860px) {
+      .hero-grid, .bio-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .nav {
+        display: none;
+      }
+      .hero-title {
+        font-size: 2.125rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand">Prof. Isuru Bandara</a>
+      <nav class="nav">
+        <a href="#bio" class="nav-link">Bio & Philosophy</a>
+        <a href="#classes" class="nav-link">Classes & Courses</a>
+        <a href="#schedule" class="nav-link">Schedule & Hours</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <a href="#contact" class="header-cta">Book Office Hour</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-kicker">Faculty of Mathematics · Oakwood Academy</div>
+          <h1 class="hero-title">Demystifying mathematics through intuition, rigor, and joy.</h1>
+          <p class="hero-lead">
+            Welcome to my academic portal. I teach high school and collegiate mathematics, specializing in Calculus, Linear Algebra, and Statistics. My goal is to transform math from abstract memorization into an intuitive language of discovery.
+          </p>
+          <div class="hero-meta">
+            <span>12+ Years Teaching Experience</span>
+            <span class="meta-sep">·</span>
+            <span>M.Sc. Mathematics</span>
+            <span class="meta-sep">·</span>
+            <span>AP Certified Educator</span>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap">
+          <div class="hero-image" style="display:flex;align-items:center;justify-content:center;background:#0f2d4a;color:#ffffff;text-align:center;padding:2rem;">
+            <div>
+              <div style="font-family:var(--font-serif);font-size:3.5rem;font-weight:700;line-height:1;margin-bottom:0.75rem;">∫ eˣ dx</div>
+              <div style="font-size:0.9375rem;opacity:0.9;">"Pure mathematics is, in its way, the poetry of logical ideas."</div>
+              <div style="font-size:0.8125rem;margin-top:0.5rem;opacity:0.75;">— Albert Einstein</div>
+            </div>
+          </div>
+          <div class="hero-caption">Oakwood Mathematics Hall · Room 304</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bio Section -->
+    <section id="bio" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Academic Background</div>
+          <h2 class="section-title">Bio & Teaching Philosophy</h2>
+          <p class="section-desc">A brief overview of my career, degrees, and guiding educational principles.</p>
+        </div>
+
+        <div class="bio-grid">
+          <div class="bio-prose">
+            <p>
+              I am a passionate mathematics educator with over twelve years of classroom experience across secondary and undergraduate levels. My academic training focuses on differential equations and applied statistics, with a pedagogical emphasis on conceptual mastery and problem-solving resilience.
+            </p>
+            <p>
+              I believe that every student has the innate capacity to understand advanced mathematics. Too often, learners encounter math as a set of disconnected algorithmic recipes to be memorized for a test and promptly forgotten. In my classroom, we reverse that paradigm: we begin with physical intuition, visual geometry, and concrete questions before introducing algebraic formalism.
+            </p>
+
+            <div class="quote-box">
+              "We do not teach formulas to be recited; we cultivate minds that question assumptions, verify hypotheses, and see beauty in logical deduction."
+            </div>
+
+            <p>
+              Beyond the blackboard, I mentor our school's Math Olympiad team, organize weekly peer problem-solving circles, and develop open-source interactive graphing worksheets.
+            </p>
+          </div>
+
+          <aside class="bio-sidebar">
+            <div class="sidebar-block">
+              <div class="sidebar-heading">Education & Credentials</div>
+              <ul class="item-list">
+                <li>
+                  <strong>M.Sc. in Applied Mathematics</strong>
+                  University Department of Mathematics · 2014
+                </li>
+                <li>
+                  <strong>B.S. in Pure Mathematics (Honors)</strong>
+                  Faculty of Science · 2012
+                </li>
+                <li>
+                  <strong>State Secondary Teaching Credential</strong>
+                  Certified in Advanced Mathematics & STEM
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-block">
+              <div class="sidebar-heading">Areas of Focus</div>
+              <ul class="item-list">
+                <li>Differential & Integral Calculus</li>
+                <li>Linear Algebra & Matrix Operations</li>
+                <li>Probability & Inferential Statistics</li>
+                <li>Mathematical Modeling & Competition Prep</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Current Offerings</div>
+          <h2 class="section-title">Classes & Courses</h2>
+          <p class="section-desc">Course descriptions, meeting times, and core topics for the current term.</p>
+        </div>
+
+        <div class="classes-grid">
+          <!-- Class 1 -->
+          <article class="class-card">
+            <div>
+              <div class="class-header">
+                <div class="class-meta">MATH 301 · Grades 11–12 · Period 2</div>
+                <h3 class="class-title">AP Calculus BC</h3>
+              </div>
+              <p class="class-desc">
+                An intensive, college-level study of rates of change, accumulation, and infinite sequences and series. Prepares students for the College Board AP exam.
+              </p>
+              <div class="syllabus-preview">
+                <div class="syllabus-preview-title">Core Units Covered:</div>
+                <ul>
+                  <li>Limits, Continuity & Differentiation Rules</li>
+                  <li>Riemann Sums & Fundamental Theorem of Calculus</li>
+                  <li>Parametric, Polar & Vector Functions</li>
+                  <li>Taylor & Maclaurin Power Series</li>
+                </ul>
+              </div>
+            </div>
+            <div class="class-footer">
+              <span>Prereq: Pre-Calculus (B+ or above)</span>
+              <span>Credits: 1.0</span>
+            </div>
+          </article>
+
+          <!-- Class 2 -->
+          <article class="class-card">
+            <div>
+              <div class="class-header">
+                <div class="class-meta">MATH 202 · Grades 10–12 · Period 4</div>
+                <h3 class="class-title">Linear Algebra & Vectors</h3>
+              </div>
+              <p class="class-desc">
+                An exploration of vector spaces, matrix transformations, determinants, and eigenvalues with applications in modern computer graphics and scientific computing.
+              </p>
+              <div class="syllabus-preview">
+                <div class="syllabus-preview-title">Core Units Covered:</div>
+                <ul>
+                  <li>Systems of Linear Equations & Gaussian Elimination</li>
+                  <li>Matrix Inverses, Rank & Subspaces</li>
+                  <li>Linear Transformations & Projections</li>
+                  <li>Eigenvalues, Eigenvectors & Diagonalization</li>
+                </ul>
+              </div>
+            </div>
+            <div class="class-footer">
+              <span>Prereq: Algebra II</span>
+              <span>Credits: 1.0</span>
+            </div>
+          </article>
+
+          <!-- Class 3 -->
+          <article class="class-card">
+            <div>
+              <div class="class-header">
+                <div class="class-meta">MATH 205 · Grades 10–11 · Period 5</div>
+                <h3 class="class-title">Statistics & Probability</h3>
+              </div>
+              <p class="class-desc">
+                Introduces empirical data analysis, probability distributions, random variables, hypothesis testing, and confidence intervals using real-world datasets.
+              </p>
+              <div class="syllabus-preview">
+                <div class="syllabus-preview-title">Core Units Covered:</div>
+                <ul>
+                  <li>Descriptive Statistics & Data Visualization</li>
+                  <li>Normal, Binomial & Poisson Distributions</li>
+                  <li>Central Limit Theorem & Sampling Error</li>
+                  <li>T-tests, Chi-square & Linear Regression</li>
+                </ul>
+              </div>
+            </div>
+            <div class="class-footer">
+              <span>Prereq: Algebra I & Geometry</span>
+              <span>Credits: 1.0</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Weekly Availability</div>
+          <h2 class="section-title">Schedule & Office Hours</h2>
+          <p class="section-desc">Students and parents are encouraged to visit for homework guidance, review sessions, or course consultations.</p>
+        </div>
+
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Class Period</th>
+              <th>Subject / Activity</th>
+              <th>Location</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday & Wednesday</td>
+              <td>08:30 – 09:50</td>
+              <td>AP Calculus BC (Section 01)</td>
+              <td>Hall 304</td>
+              <td>In Session</td>
+            </tr>
+            <tr>
+              <td>Monday & Wednesday</td>
+              <td>10:15 – 11:35</td>
+              <td>Linear Algebra & Vectors</td>
+              <td>Hall 304</td>
+              <td>In Session</td>
+            </tr>
+            <tr>
+              <td>Tuesday & Thursday</td>
+              <td>09:00 – 10:20</td>
+              <td>Statistics & Probability</td>
+              <td>Hall 306</td>
+              <td>In Session</td>
+            </tr>
+            <tr>
+              <td>Tuesday & Thursday</td>
+              <td>14:00 – 16:00</td>
+              <td><strong>Open Office Hours & Math Lab</strong></td>
+              <td>Office 312</td>
+              <td>Drop-in / Appointments</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>13:00 – 14:30</td>
+              <td>Math Olympiad Practice & Club</td>
+              <td>Room 304</td>
+              <td>Open to all</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Get In Touch</div>
+          <h2 class="section-title">Contact & Inquiries</h2>
+          <p class="section-desc">Reach out for tutoring appointments, parent conferences, or general academic inquiries.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-item">
+              <div class="contact-label">Email Address</div>
+              <div class="contact-value"><a href="mailto:isurumbandara@gmail.com" style="color:inherit;text-decoration:none;">isurumbandara@gmail.com</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">Classroom & Office</div>
+              <div class="contact-value">Department of Mathematics, Hall 304 / Office 312</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">Department Phone</div>
+              <div class="contact-value">+1 (555) 482-9102 (Ext. 408)</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">Response Time Policy</div>
+              <div class="contact-value" style="font-size:0.9375rem;color:var(--text-muted);">
+                I usually respond to student and parent emails within 24 hours on school days. For urgent matters, please contact the department office.
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); document.getElementById('successMsg').style.display='block';">
+              <div class="form-group">
+                <label class="form-label" for="name">Your Name</label>
+                <input class="form-input" type="text" id="name" required placeholder="e.g., Alex Johnson">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address</label>
+                <input class="form-input" type="email" id="email" required placeholder="alex@example.com">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="reason">Subject / Reason</label>
+                <select class="form-select" id="reason">
+                  <option>Office Hours Appointment</option>
+                  <option>AP Calculus Question</option>
+                  <option>Linear Algebra Question</option>
+                  <option>Parent Consultation</option>
+                  <option>Math Olympiad Inquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-textarea" id="message" required placeholder="Write your question or preferred meeting times..."></textarea>
+              </div>
+
+              <button class="submit-btn" type="submit">Send Inquiry</button>
+
+              <div id="successMsg" class="success-alert">
+                Thank you! Your message has been sent. Prof. Bandara will respond shortly.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year">2026</span> Prof. Isuru Bandara · Mathematics Department</div>
+      <div>Oakwood Academic Campus · Dedicated to excellence in STEM education</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
