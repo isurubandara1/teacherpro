@@ -185,7 +185,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     tag: 'Calculus & Analysis',
     src: CHALKBOARD_LECTURE,
     aspect: 'aspect-[16/10]',
-    description: 'Every morning lecture unfolds on genuine slate chalkboards. Writing out derivations by hand gives students time to digest rates of change, limit bounds, and differential geometry step-by-step.',
+    description: 'Every morning lecture unfolds on genuine slate chalkboards. Writing derivations by hand gives students time to digest rates of change, limit bounds, and differential geometry step-by-step.',
     didYouKnow: 'Studies in mathematical cognitive science show that physical chalkboard derivations enhance retention by over 40% compared to rapid slide projections.'
   },
   {
